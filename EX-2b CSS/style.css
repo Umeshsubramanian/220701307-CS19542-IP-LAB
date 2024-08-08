@@ -1,0 +1,9 @@
+.main_container {
+    display: flex;
+}
+.description {
+    margin: 30px;
+}
+.menu {
+    margin: 30px;
+}

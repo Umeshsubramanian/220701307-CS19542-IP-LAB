@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Registration</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eaeaea; /* Light gray background */
+            color: #000000; /* Black text */
+            padding: 20px;
+            margin: 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #000000; /* Black heading */
+            margin-bottom: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff; /* White background for the form */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #000000; /* Black text for labels */
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc; /* Light gray border */
+            border-radius: 4px;
+            background-color: #f9f9f9; /* Light background for inputs */
+            color: #000000; /* Black text for inputs */
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #007BFF; /* Blue border on focus */
+            outline: none; /* Remove outline */
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-actions button {
+            background-color: #007BFF; /* Blue background */
+            color: #ffffff; /* White text */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-actions button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        .error {
+            color: #ff4d4d; /* Red text for errors */
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .success {
+            color: #66cc66; /* Green success message */
+            font-size: 1em;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Track Registration</h1>
+    
+    <div class="form-container">
+        <form id="registrationForm" action="register.php" method="POST">
+            <!-- Driver Name -->
+            <div class="form-group">
+                <label for="name">Driver Name:</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="nameError"></div>
+            </div>
+            
+            <!-- FIA Racing License -->
+            <div class="form-group">
+                <label>Do you have a FIA-issued racing license?</label><br>
+                <input type="radio" id="Yes" name="licenseStatus" value="Yes" required>
+                <label for="Yes" style="display: inline;">Yes</label>
+                <input type="radio" id="No" name="licenseStatus" value="No" required>
+                <label for="No" style="display: inline;">No</label>
+                <div class="error" id="licenseError"></div>
+            </div>
+
+            <!-- License Number -->
+            <div class="form-group">
+                <label for="license">License Number (if yes):</label>
+                <input type="text" id="license" name="license">
+                <div class="error" id="licenseNumberError"></div>
+            </div>
+            
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender:</label><br>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male" style="display: inline;">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female" style="display: inline;">Female</label>
+                <div class="error" id="genderError"></div>
+            </div>
+
+            <!-- Date of Birth -->
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+                <div class="error" id="dobError"></div>
+            </div>
+
+            <!-- Age -->
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+                <div class="error" id="ageError"></div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+                <div class="error" id="phoneError"></div>
+            </div>
+
+            <!-- Select Series -->
+            <div class="form-group">
+                <label for="series">Select Series:</label>
+                <select id="series" name="series" required>
+                    <option value="" disabled selected>Select Series:</option>
+                    <option value="1">Basic Kart - Junior</option>
+                    <option value="2">Basic Kart - Adult</option>
+                    <option value="3">Pro Karts 1</option>
+                    <option value="5">Pro Karts 500cc</option>
+                </select>
+                <div class="error" id="seriesError"></div>
+            </div>
+
+            <!-- Years of Experience -->
+            <div class="form-group">
+                <label for="experience">Years of Experience:</label>
+                <input type="number" id="experience" name="experience" min="0" required>
+                <div class="error" id="experienceError"></div>
+            </div>
+
+            <!-- Race Date -->
+            <div class="form-group">
+                <label for="racedate">Select a Date for Race:</label>
+                <input type="date" id="racedate" name="racedate" required>
+                <div class="error" id="raceDateError"></div>
+            </div>
+
+            <!-- Track Selection -->
+            <div class="form-group">
+                <label for="tracks">Choose Track:</label>
+                <select id="tracks" name="tracks" required>
+                    <option value="MIKA">Madras International Kart</option>
+                    <option value="BKA">Bangalore Karting Arena</option>
+                    <option value="MRA">Mumbai Racing Association Track</option>
+                    <option value="HIC">Hyderabad International Circuit</option>
+                    <option value="Delhi">Delhi Speedway</option>
+                </select>
+                <div class="error" id="trackError"></div>
+            </div>
+
+            <!-- Form Buttons -->
+            <div class="form-actions">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="success" id="successMessage"></div>
+
+    <script>
+        function validateForm() {
+            // Clear previous error messages
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            document.getElementById('successMessage').textContent = '';
+
+            let isValid = true;
+
+            // Validate Driver Name
+            const name = document.getElementById('name').value.trim();
+            if (name === '') {
+                document.getElementById('nameError').textContent = 'Driver Name is required.';
+                isValid = false;
+            }
+
+            // Validate FIA Racing License
+            const licenseStatus = document.querySelector('input[name="licenseStatus"]:checked');
+            if (!licenseStatus) {
+                document.getElementById('licenseError').textContent = 'Please select if you have a FIA-issued racing license.';
+                isValid = false;
+            }
+
+            // Validate License Number if applicable
+            if (licenseStatus && licenseStatus.value === 'Yes') {
+                const licenseNumber = document.getElementById('license').value.trim();
+                if (licenseNumber === '') {
+                    document.getElementById('licenseNumberError').textContent = 'License Number is required if you have a racing license.';
+                    isValid = false;
+                }
+            }
+
+            // Validate Gender
+            const gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                document.getElementById('genderError').textContent = 'Please select your gender.';
+                isValid = false;
+            }
+
+            // Validate Date of Birth
+            const dob = document.getElementById('dob').value;
+            if (!dob) {
+                document.getElementById('dobError').textContent = 'Date of Birth is required.';
+                isValid = false;
+            }
+
+            // Validate Age
+            const age = document.getElementById('age').value;
+            if (age <= 0) {
+                document.getElementById('ageError').textContent = 'Age must be a positive number.';
+                isValid = false;
+            }
+
+            // Validate Phone Number
+            const phone = document.getElementById('phone').value;
+            if (phone.length !== 10) {
+                document.getElementById('phoneError').textContent = 'Phone Number must be 10 digits.';
+                isValid = false;
+            }
+
+            // Validate Selected Series
+            const series = document.getElementById('series').value;
+            if (!series) {
+                document.getElementById('seriesError').textContent = 'Please select a series.';
+                isValid = false;
+            }
+
+            // Validate Years of Experience
+            const experience = document.getElementById('experience').value;
+            if (experience < 0) {
+                document.getElementById('experienceError').textContent = 'Years of Experience cannot be negative.';
+                isValid = false;
+            }
+
+            // Validate Race Date
+            const raceDate = document.getElementById('racedate').value;
+            if (!raceDate) {
+                document.getElementById('raceDateError').textContent = 'Race Date is required.';
+                isValid = false;
+            }
+
+            // Validate Track Selection
+            const track = document.getElementById('tracks').value;
+            if (!track) {
+                document.getElementById('trackError').textContent = 'Please select a track.';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        // Attach validateForm function to form submit event
+        document.getElementById('registrationForm').onsubmit = function(event) {
+            if (!validateForm()) {
+                event.preventDefault(); // Prevent form submission if validation fails
+            } else {
+                document.getElementById('successMessage').textContent = 'Form submitted successfully!';
+            }
+        }
+    </script>
+</body>
+</html>

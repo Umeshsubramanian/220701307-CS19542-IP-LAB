@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Attack</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #444;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        nav a {
+            float: none;
+            display: inline-block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Container and Main Content */
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Slideshow Styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Sections */
+        .about, .events, .news {
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2, .events h2, .news h2 {
+            color: #333;
+            margin-bottom: 15px;
+            border-left: 5px solid #ff5722;
+            padding-left: 10px;
+        }
+
+        .about p, .events p, .news p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Event Cards */
+        .event-card {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .event-card h3 {
+            color: #333;
+        }
+
+        .event-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .event-card .register-btn {
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .event-card .register-btn:hover {
+            background-color: #e64a19;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .event-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .event-card .register-btn {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Track Attack</h1>
+    </header>
+
+    <nav>
+        <a href="register.html">Register for Race</a>
+        <a href="map.html">Tracks</a>
+        <a href="news.html">News</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <!-- Slideshow Section -->
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="kart1.jpg" alt="Kart 1">
+            </div>
+            <div class="slide">
+                <img src="kart2.jpg" alt="Kart 2">
+            </div>
+            <div class="slide">
+                <img src="kart3.jpg" alt="Kart 3">
+            </div>
+            <div class="slide">
+                <img src="kart4.jpg" alt="Kart 4">
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Us</h2>
+            <p>Track Attack is your ultimate destination for everything kart racing! Whether you're a beginner looking to enter the exciting world of karting or a seasoned racer seeking new challenges, Track Attack offers thrilling events, state-of-the-art tracks, and the latest racing news. We’re dedicated to creating a community of passionate racers and providing an unforgettable karting experience.</p>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section class="events">
+            <h2>Upcoming Events</h2>
+
+            <div class="event-card">
+                <div>
+                    <h3>National Kart Championship</h3>
+                    <p><strong>Date:</strong> November 25, 2024</p>
+                    <p><strong>Location:</strong> Madras International Circuit</p>
+                </div>
+                <a href="register.html" class="register-btn">Register Now</a>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h3>Rookie Racer Weekend</h3>
+                    <p><strong>Date:</strong> December 5, 2024</p>
+                    <p><strong>Location:</strong> Bangalore Kart Arena</p>
+                </div>
+                <a href="register.html" class="register-btn">Register Now</a>
+            </div>
+
+            <div class="event-card">
+                <div>
+                    <h3>Track Attack Night Races</h3>
+                    <p><strong>Date:</strong> December 12, 2024</p>
+                    <p><strong>Location:</strong> Mumbai Speed Kart Track</p>
+                </div>
+                <a href="register.html" class="register-btn">Register Now</a>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section class="news">
+            <h2>Latest News</h2>
+            <p><strong>October 20, 2024:</strong> Track Attack is proud to announce the launch of its newest racing track in Hyderabad! This world-class circuit will host some of the most thrilling karting events in the country.</p>
+            <p><strong>October 15, 2024:</strong> We’re excited to introduce the Track Attack Junior Championship, open to all racers aged 8-14. Get ready for the next generation of racing stars!</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Track Attack | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // Slideshow JavaScript
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+
+</body>
+</html>

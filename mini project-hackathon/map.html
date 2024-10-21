@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map | Track Attack</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333; /* Dark background */
+            color: white; /* White text for contrast */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #444; /* Slightly lighter background for header */
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .map-container {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 80%;
+        }
+
+        img {
+            width: 100%; /* Make the image responsive */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 10px; /* Optional: add rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional: add shadow for depth */
+        }
+
+        footer {
+            background-color: #444; /* Footer background */
+            color: white; /* Footer text color */
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Karting Locations in India</h1>
+        <h2>(Click on your state to get the list of available tracks)</h2>
+    </header>
+
+    <div class="map-container">
+        <!-- Image Map -->
+        <img src="India.jpg" usemap="#image-map" alt="Map of Karting Locations in India">
+        
+        <map name="image-map">
+            <area target="" alt="Madras International Karting Arena" title="Madras International Karting Arena" href="mika.html" coords="250,787,239,698,318,652,309,729" shape="poly">
+            <area target="" alt="Bangalore" title="Bangalore" href="bang.html" coords="253,526,175,586,181,657,226,690,276,661,240,618" shape="poly">
+            <area target="" alt="Hyderabad" title="Hyderabad" href="hyd.html" coords="246,593,280,656,317,649,315,601,429,539,406,516,289,581" shape="poly">
+            <area target="" alt="Mumbai" title="Mumbai" href="mumbai.html" coords="180,425,142,470,159,585,252,516,327,500,325,438" shape="poly">
+            <area target="" alt="Delhi" title="Delhi" href="delhi.html" coords="277,252,27" shape="circle">
+        </map>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Track Attack | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

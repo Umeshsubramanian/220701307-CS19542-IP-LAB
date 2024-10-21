@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madras International Karting Arena</title>
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header styles */
+        header {
+            background-image: url('karting-banner.jpg'); /* Replace with your banner image */
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header::after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        header h1 {
+            position: relative;
+            z-index: 2;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        header p {
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+        }
+
+        /* Main content styles */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .track-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+        .track-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .track-info h2 {
+            color: #444;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #f05454;
+            padding-left: 10px;
+        }
+        .track-info p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .track-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .track-info ul li {
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .track-info ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Button styles */
+        .btn {
+            display: inline-block;
+            background-color: #f05454;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #d04343;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1rem;
+            }
+            .track-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Madras International Karting Arena</h1>
+        <p>Experience the thrill of karting on one of India's top circuits!</p>
+    </header>
+
+    <div class="container">
+        <div class="track-info">
+            <h2>Track Layout</h2>
+            <!-- Replace this with the actual image file path -->
+            <img src="track-layout.jpg" alt="Madras International Karting Arena Track Layout">
+            <p>
+                The Madras International Karting Arena is a state-of-the-art karting facility, located just outside Chennai.
+                The track offers a perfect blend of high-speed straights, tight corners, and technical sections. Designed for all levels 
+                of drivers, the track promises excitement and challenges, whether you're a beginner or an experienced racer.
+            </p>
+            <h2>Track Features</h2>
+            <ul>
+                <li>Track Length: 1.2 km</li>
+                <li>Track Width: 8 meters</li>
+                <li>16 high-speed, challenging corners</li>
+                <li>Professional-grade safety barriers and lighting</li>
+                <li>Fast straight sections for high-speed thrills</li>
+                <li>State-of-the-art timing systems</li>
+                <li>Ideal for both amateurs and professionals</li>
+            </ul>
+            <a href="register.html" class="btn">Book Your Slot</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Madras International Karting Arena. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

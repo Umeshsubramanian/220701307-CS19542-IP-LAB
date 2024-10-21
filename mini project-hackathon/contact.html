@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Track Attack</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #444;
+            text-align: center;
+            padding: 15px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Contact Form Section */
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            color: #333;
+            margin-bottom: 20px;
+            border-left: 5px solid #ff5722;
+            padding-left: 10px;
+        }
+        .contact-form label {
+            font-size: 1rem;
+            color: #333;
+        }
+        .contact-form input, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+        .contact-form button {
+            background-color: #ff5722;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .contact-form button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .contact-info div {
+            flex: 1;
+            padding: 10px 20px;
+            min-width: 250px;
+        }
+        .contact-info h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .contact-info p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Social Media Links */
+        .social-media {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .social-media a {
+            color: white;
+            background-color: #333;
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            margin: 0 10px;
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+        .social-media a:hover {
+            background-color: #555;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+            }
+            .contact-info div {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html">Register for Race</a>
+        <a href="tracks.html">Tracks</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- Contact Form Section -->
+        <section class="contact-form">
+            <h2>Get in Touch</h2>
+            <form action="submit_form.html" method="POST">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Contact Information Section -->
+        <section class="contact-info">
+            <div>
+                <h3>Location</h3>
+                <p>Madras International Circuit, Chennai, India</p>
+            </div>
+            <div>
+                <h3>Email Us</h3>
+                <p>support@trackattack.com</p>
+            </div>
+            <div>
+                <h3>Call Us</h3>
+                <p>+91 123-456-7890</p>
+            </div>
+        </section>
+
+        <!-- Social Media Links -->
+        <div class="social-media">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank">F</a>
+            <a href="https://twitter.com" target="_blank">T</a>
+            <a href="https://instagram.com" target="_blank">I</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Track Attack | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>

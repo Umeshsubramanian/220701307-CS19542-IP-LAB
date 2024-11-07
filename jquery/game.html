@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Bubbles with Numbers</title>
+    <style>
+        .bubble {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 10px;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            line-height: 100px; /* Align number vertically */
+        }
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+<button id="createBubble">Create Bubble</button>
+<div id="container"></div>
+
+<script src="jquery-3.7.1.js"></script>
+<script>
+
+    // Function to generate random color in hex format
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        let windowWidth = $(window).width();
+        console.log(windowWidth);
+        return color;
+
+    }
+
+    // Function to generate random number
+    function getRandomNumber() {
+        return Math.floor(Math.random() * 100); // Generates a random number between 0-99
+    }
+
+    // Event listener for the button to create a new bubble
+    $('#createBubble').click(function() {
+        let bubble = $('<div class="bubble"></div>'); // Create a new bubble div
+        let randomColor = getRandomColor(); // Get a random color
+        let randomNumber = getRandomNumber(); // Get a random number
+
+        bubble.css('background-color', randomColor); // Set the background color of the bubble
+        bubble.text(randomNumber); // Add the random number to the bubble
+
+        $('#container').append(bubble); // Append the new bubble to the container
+    });
+</script>
+
+</body>
+</html>

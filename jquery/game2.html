@@ -1,0 +1,78 @@
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Color Bubbles with Numbers</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+        }
+        .bubble {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-block;
+            position: absolute; 
+            color: white;
+            font-size: 12px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<p>Press any key to add a bubble!</p>
+<p id="count">0</p>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Function to generate random color in hex format
+    var a=0;
+    function getRandomColor() {
+        let letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    // Function to generate random number
+    function getRandomNumber() {
+        // return Math.floor(Math.random() * 100); 
+        let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let color =letters[Math.floor(Math.random() * 26)];
+        return color;
+        // Generates a random number between 0-99
+    }
+
+    // Function to generate random position for the bubble
+    function getRandomPosition() {
+        let windowWidth = $(window).width()-100;
+        let windowHeight = $(window).height() - 100;
+        let randomX = Math.floor(Math.random() * windowWidth);
+        let randomY = Math.floor(Math.random() * windowHeight);
+        return { left: randomX, top: randomY };
+    }
+
+
+    $(document).keydown(function() {
+        $("#count").text(a++);
+        let bubble = $('<div class="bubble"></div>');
+        let randomColor = getRandomColor(); 
+        let randomNumber = getRandomNumber();
+        let randomPosition = getRandomPosition();
+        
+
+        bubble.css('background-color', randomColor);
+        bubble.text(randomNumber);
+        bubble.css({ left: randomPosition.left + 'px', top: randomPosition.top + 'px' });
+
+        $('body').append(bubble);
+    });
+</script>
+
+</body>
+</html>
